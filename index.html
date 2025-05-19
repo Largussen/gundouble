@@ -1,9 +1,8 @@
-
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Gunblood - Flash</title>
+  <title>Gunblood - Ruffle</title>
   <script src="ruffle/ruffle.js"></script>
   <style>
     body {
@@ -14,12 +13,23 @@
       align-items: center;
       height: 100vh;
     }
-    embed {
-      border: 3px solid white;
+    #game-container {
+      width: 800px;
+      height: 600px;
     }
   </style>
 </head>
 <body>
-  <embed src="gunblood.swf" width="800" height="600">
+  <div id="game-container"></div>
+
+  <script>
+    window.RufflePlayer = window.RufflePlayer || {};
+    window.addEventListener("DOMContentLoaded", () => {
+      const ruffle = window.RufflePlayer.newest();
+      const player = ruffle.createPlayer();
+      document.getElementById("game-container").appendChild(player);
+      player.load("gunblood.swf");
+    });
+  </script>
 </body>
 </html>
