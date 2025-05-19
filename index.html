@@ -5,17 +5,24 @@
   <title>Gunblood - Ruffle</title>
   <script src="ruffle/ruffle.js"></script>
   <style>
-    body {
+    html, body {
       margin: 0;
+      padding: 0;
       background: black;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    #game-container {
+      width: 100vw;
       height: 100vh;
     }
-    #game-container {
-      width: 800px;
-      height: 600px;
+
+    ruffle-player {
+      width: 100%;
+      height: 100%;
+      display: block;
     }
   </style>
 </head>
